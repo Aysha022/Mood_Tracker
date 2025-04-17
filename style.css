@@ -1,1 +1,38 @@
+body { 
+  font-family: "Henny Penny", system-ui;
+  font-size: 40px;
+  background-color: #97dffc;
+}
+
+
+.text {
+  z-index: 2;
+  text-align: center;
+  margin-top: 300px;
+  color: #505050;
+  position: relative;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2s steps(20);
+}
+
+@keyframes typewriter {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.cloud {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.8;
+}
+
 
