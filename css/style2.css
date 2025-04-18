@@ -10,7 +10,7 @@ body {
     padding: 30px;
     border-radius: 30px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    margin-top: 180px;
+    margin-top: 140px;
     text-align: center;
     width: 80%;
     max-width: 500px;
@@ -40,11 +40,21 @@ body {
     transform: scale(1.4);
   }
 
-  .input {
+  textarea.input {
+    background-image: url('../images/cutecloud.png');
+    background-position: center;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    color: #333;
+    padding: 15px;
+    background-color: rgb(209, 244, 249);
+
     width: 90%;
+    height: 70px;
     border: none;
     border-radius: 20px;
-    padding: 10px;
+    padding-bottom: 75px;
+    padding-top: 10px;
     font-size: 18px;
     font-family: inherit;
     resize: none;
@@ -57,6 +67,7 @@ body {
     background-color: #00b4d8;
     color: white;
     border: none;
+    margin-top: 5px;
     border-radius: 30px;
     padding: 10px 25px;
     font-size: 18px;
