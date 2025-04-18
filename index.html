@@ -2,9 +2,7 @@
 <html>
   <head>
     <title>Mood Tracker</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
   </head>
 
@@ -12,6 +10,11 @@
     <div class = "text">
       <span class = "typewriter">Hey you! Ready to vibe-check yourself today?🌥️</span>
     </div>
+
+    <div class = "hint-text">
+      <span class = "typewriter">A cozy cloud wants to hear your feelings—give it a click? ☁️❤️</span>
+    </div>
+    
 
     <div class = "cloud" style = "top: 10px; left: 100px;">
       <img src = "cloud.gif" width = "200" height = "250">
@@ -26,7 +29,9 @@
     </div>
   
     <div class = "cloud" style = "top: 500px; left: 600px;">
-      <img src = "cloud.gif" width = "160" height = "200">
+      <a href = "pages/mood.html" class = "click-cloud">
+        <img src = "cloud.gif" alt = "Click me!" width = "160" height = "200">
+      </a>
     </div>
 
     <div class = "cloud" style = "top: 0px; left: 800px;">
@@ -44,7 +49,5 @@
     <div class = "cloud" style = "top: 340px; left: 1200px;">
       <img src = "cloud.gif" width = "220" height = "350">
     </div>
-    
-    <script src = "script.js"></script>
   </body>
 </html>

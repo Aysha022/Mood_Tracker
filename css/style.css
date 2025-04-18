@@ -9,9 +9,16 @@ body {
   z-index: 2;
   text-align: center;
   margin-top: 300px;
-  color: #505050;
+  color: #131313;
   position: relative;
 }
+
+.hint-text {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 70px;
+}
+
 
 .typewriter {
   display: inline-block;
@@ -32,7 +39,10 @@ body {
 .cloud {
   position: absolute;
   z-index: 1;
-  opacity: 0.8;
+}
+
+.click-cloud:hover {
+   opacity: 0.7;
 }
 
 
