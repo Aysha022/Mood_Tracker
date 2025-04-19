@@ -1,6 +1,8 @@
 body {
     background-color: #c6efff;
     display: flex;
+    flex-direction: row;
+    gap: 80px;
     align-items: center;
     justify-content: center;
 }
@@ -10,37 +12,82 @@ body {
     padding: 30px;
     border-radius: 30px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    margin-top: 140px;
+    margin-top: 100px;
     text-align: center;
     width: 80%;
     max-width: 500px;
+    transition: transform 0.5s ease-in-out;
   }
 
-  .heading {
+.container.move-left {
+    transform: translateX(-30px);
+}
+
+.container2 {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    height: 350px;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+    font-family: inherit;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin-top: 100px;
+} 
+
+.container2.show {
+    display: block;
+    opacity: 1;
+}
+
+.mood-actions {
+    margin-top: 20px;;
+}
+
+.mood-actions button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.mood-actions button:hover {
+    background-color: #d84343;
+}
+
+.heading {
     font-size: 24px;
     margin-bottom: 40px;
     color: #333;
-  }
+}
 
-  .emoji-container {
+.emoji-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 20px;
-  }
+}
 
-  .emoji {
+.emoji {
     font-size: 35px;
     cursor: pointer;
     transition: transform 0.2s;
-  }
+}
 
-  .emoji:hover {
+.emoji:hover {
     transform: scale(1.4);
-  }
+}
 
-  textarea.input {
+textarea.input {
     background-image: url('../images/cutecloud.png');
     background-position: center;
     background-size: 300px;
@@ -61,9 +108,9 @@ body {
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     margin-top: 20px;
     margin-bottom: 20px;
-  }
+}
 
-  .button {
+.button {
     background-color: #00b4d8;
     color: white;
     border: none;
@@ -74,8 +121,16 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: background-color 0.3s;
-  }
+}
 
-  .button:hover {
+.button:hover {
     background-color: #0077b6;
-  }
+}
+
+.selected {
+    transform: scale(1.6);
+    border: 2px dashed #555;
+    border-radius: 50%;
+    padding: 5px;
+}
+  
