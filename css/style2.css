@@ -5,6 +5,12 @@ body {
     gap: 80px;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 .container {
@@ -16,51 +22,51 @@ body {
     text-align: center;
     width: 80%;
     max-width: 500px;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+    opacity: 1;
+  }
+
+.container.hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 
 .container.move-left {
     transform: translateX(-30px);
+} 
+
+.container.move-right {
+    transform: translateX(200px);
 }
 
 .container2 {
     display: none;
     opacity: 0;
-    transition: opacity 0.5s ease;
-    height: 350px;
+    transform: translateX(30px); 
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    background: #ffffffaa;
+    height: 300px;
     width: 500px;
-    border-radius: 20px;
+    border-radius: 80px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 40px;
     font-size: 18px;
     font-family: inherit;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    margin-top: 100px;
+    margin-top: 150px;
+    animation: float 5s ease-in-out infinite;
 } 
 
-.container2.show {
+@keyframes float {
+    0% { transform: translateY(30px); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(30px); }
+  }
+
+.container2.move-right {
     display: block;
+    transform: translateX(0);
     opacity: 1;
-}
-
-.mood-actions {
-    margin-top: 20px;;
-}
-
-.mood-actions button {
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.mood-actions button:hover {
-    background-color: #d84343;
 }
 
 .heading {
@@ -80,7 +86,7 @@ body {
 .emoji {
     font-size: 35px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease;
 }
 
 .emoji:hover {
@@ -125,12 +131,38 @@ textarea.input {
 
 .button:hover {
     background-color: #0077b6;
+    transform: translateY(-2px);
 }
 
 .selected {
-    transform: scale(1.6);
-    border: 2px dashed #555;
-    border-radius: 50%;
-    padding: 5px;
+    transform: scale(1.5);
 }
-  
+
+.selected:hover {
+    transform: scale(1.7);
+}
+
+.mood-actions {
+    margin-top: 20px;;
+}
+
+.mood-actions button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 30px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.mood-actions button:hover {
+    background-color: #d84343;
+    transform: translateY(-2px);
+}
+
+/*.logged-mood{
+    background-color: #ff6b6b;
+} */

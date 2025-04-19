@@ -8,6 +8,11 @@ let editButton = document.querySelector('.edit-button');
 let resetButton = document.querySelector('.reset-button');
 
 let selectedMood = null;
+let savedNote = "";
+
+window.addEventListener('load',() => {
+    document.body.classList.add('loaded');
+});
 
 emojis.forEach(emoji => {
   emoji.addEventListener('click',() => {
@@ -31,11 +36,16 @@ button.addEventListener('click',() => {
 
     localStorage.setItem("moodEntry",JSON.stringify(moodData));
 
+    savedNote = input.value;
     container.classList.add('move-left');
-    container2.classList.add('show');
-    container2.classList.remove('hidden');
+    container.style.display = "none";
 
-
+    container2.style.display = "block";
+    setTimeout(() => {
+        container2.classList.add('move-right');
+        //container2.classList.remove('hidden');
+    },100);
+        
     displaySavedMood();
     input.value = "";
 });
@@ -64,9 +74,15 @@ function displaySavedMood() {
 
 //edit mood
 editButton.addEventListener('click',() => {
-    container.classList.remove('move-left');
-    container2.classList.remove('show');
+    container2.classList.remove('move-right');
     container2.classList.add('hidden');
+
+    container.style.display = "block";
+    input.value  = savedNote;
+    setTimeout(() => {
+        container.classList.remove('hidden');
+        container.classList.add('move-right');
+},100);   
 });
 
 //reset mood 
@@ -77,9 +93,14 @@ resetButton.addEventListener('click',() => {
     emojis.forEach(e => e.classList.remove('selected'));
     selectedMood = null;
 
-    container.classList.remove('move-left');
-    container2.classList.remove('show');
+    container2.classList.remove('move-right');
     container2.classList.add('hidden');
+
+    container.style.display = "block";
+    setTimeout(() => {
+        container.classList.remove('hidden');
+        container.classList.add('move-right');
+    },100);     
 });
 
 displaySavedMood();
